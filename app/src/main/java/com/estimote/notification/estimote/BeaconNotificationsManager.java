@@ -43,7 +43,7 @@ public class BeaconNotificationsManager {
                 if (message != null) {
                     showNotification(message);
                     Activity a = (Activity) context;
-                    if (region.getMinor() == 1) {
+                    if (region.getMinor() == 58703) {
                         a.setContentView(R.layout.test);
                     } else if (region.getMinor() == 2 ) {
                         a.setContentView(R.layout.test);
@@ -60,7 +60,7 @@ public class BeaconNotificationsManager {
                 if (message != null) {
                     showNotification(message);
                     Activity a = (Activity) context;
-                    if (region.getMinor() == 1) {
+                    if (region.getMinor() == 58703) {
                         a.setContentView(R.layout.test);
                     } else if (region.getMinor() == 2 ) {
                         a.setContentView(R.layout.test);
