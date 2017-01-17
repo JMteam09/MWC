@@ -42,7 +42,15 @@ public class BeaconNotificationsManager {
                 String message = enterMessages.get(region.getIdentifier());
                 if (message != null) {
                     showNotification(message);
-                    MainActivity.ME.setContentView(R.layout.test);
+                    if (MainActivity.active = true) {
+                        if (region.getMinor() == 58703) {
+                            MainActivity.ME.setContentView(R.layout.first);
+                        } else if (region.getMinor() == 31953) {
+                            MainActivity.ME.setContentView(R.layout.second);
+                        } else if (region.getMinor() == 36037) {
+                            MainActivity.ME.setContentView(R.layout.third);
+                        }
+                    }
                 }
             }
 
@@ -52,8 +60,9 @@ public class BeaconNotificationsManager {
                 String message = exitMessages.get(region.getIdentifier());
                 if (message != null) {
                     showNotification(message);
-                    Activity a = (Activity) context;
-                    a.setContentView(R.layout.test);
+                    if (MainActivity.active = true) {
+                        MainActivity.ME.setContentView(R.layout.activity_main);
+                    }
                 }
             }
         });
