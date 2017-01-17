@@ -18,12 +18,8 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        // TODO: put your App ID and App Token here
-        // You can get them by adding your app on https://cloud.estimote.com/#/apps
-        EstimoteSDK.initialize(getApplicationContext(), "<#App ID#>", "<#App Token#>");
+        EstimoteSDK.initialize(getApplicationContext(), "maaswaal-college-veenseweg-15t", "4302f89a2ec3d5c5ec15596a0e1079d0");
 
-        // uncomment to enable debug-level logging
-        // it's usually only a good idea when troubleshooting issues with the Estimote SDK
 //        EstimoteSDK.enableDebugLogging(true);
     }
 
@@ -33,7 +29,7 @@ public class MyApplication extends Application {
         BeaconNotificationsManager beaconNotificationsManager = new BeaconNotificationsManager(this);
         beaconNotificationsManager.addNotification(
                 // TODO: replace with UUID, major and minor of your own beacon
-                new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 1, 1),
+                new BeaconID("a3f113372c4d4014817c5b72a2bc2315", 24934, 58703),
                 "Hello, world.",
                 "Goodbye, world.");
         beaconNotificationsManager.startMonitoring();
