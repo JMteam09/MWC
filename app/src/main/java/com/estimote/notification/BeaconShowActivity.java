@@ -20,9 +20,9 @@ public class BeaconShowActivity extends Activity {
 
                 if (beaconMinor == 58703) {
                     setContentView(R.layout.first);
-                } else if (beaconMinor == 31953){
+                } else if (beaconMinor == 9998){
                     setContentView(R.layout.second);
-                } else if (beaconMinor == 36037){
+                } else if (beaconMinor == 9997){
                     setContentView(R.layout.third);
                 } else {
                     setContentView(R.layout.activity_main);
