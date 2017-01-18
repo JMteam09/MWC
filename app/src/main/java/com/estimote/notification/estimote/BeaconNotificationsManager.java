@@ -59,7 +59,6 @@ public class BeaconNotificationsManager {
                 String message = exitMessages.get(region.getIdentifier());
                 if (message != null) {
                     int beaconMinor = region.getMinor();
-                    showNotification(message, beaconMinor);
                 }
             }
         });
