@@ -4,39 +4,47 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+;
 
 import com.estimote.sdk.SystemRequirementsChecker;
+import com.jordi.corepacket.logging;
 
-//
-// Running into any issues? Drop us an email to: contact@estimote.com
-//
+import static com.jordi.corepacket.logging.LogType.*;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
-    String ch = "true";
+
     public static Activity ME;
+    public static boolean active = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ME = this;
+        try {
+            setContentView(R.layout.activity_main);
+            ME = this;
+            Log.d("MWC", A2);
+        } catch (Exception e){
+            Log.d("MWC", A3 + logging.stack_to_string(e.getStackTrace()));
+        }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        active = true;
 
         MyApplication app = (MyApplication) getApplication();
-        if (ch == "true") {
             if (!SystemRequirementsChecker.checkWithDefaultDialogs(this)) {
-                Log.e(TAG, "Can't scan for beacons, some pre-conditions were not met");
-                Log.e(TAG, "Read more about what's required at: http://estimote.github.io/Android-SDK/JavaDocs/com/estimote/sdk/SystemRequirementsChecker.html");
-                Log.e(TAG, "If this is fixable, you should see a popup on the app's screen right now, asking to enable what's necessary");
             } else if (!app.isBeaconNotificationsEnabled()) {
-                Log.d(TAG, "Enabling beacon notifications");
                 app.enableBeaconNotifications();
             }
-        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        active = false;
     }
 }

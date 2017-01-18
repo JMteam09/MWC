@@ -1,0 +1,10 @@
+Zoals je weet heeft android een handig log systeem (logcat)
+Je kan logs filteren op tags.
+ik gebruik wat tags om type logs op te sorteren dit is handig tijdens debuggen.
+probeer deze indeling te hanteren, mis je iets? voeg het toe!
+*open alle logs met log_(log letter log nummer)*
+dus je log function ziet er zo uit: Log.d("MWC", "log letter log nummer\n" + log spul hier);
+
+A1 - Startup notes. Info om te checken of alles goed is ingesteld / is opgestart.
+A2 - Startup complete. Word gegelogt op moment dat alles in het catch/try statement goed is gegaan op startup
+A3 - Startup error. fouten in starup functions
