@@ -7,6 +7,7 @@ import com.estimote.sdk.*;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import com.estimote.sdk.Beacon;
@@ -21,19 +22,17 @@ import static com.jordi.corepacket.logging.LogType.*;
 public class BeaconMangr {
     private Context con;
     private BeaconManager manager;
-    private HashMap<String, Action> onEnter;
-    private HashMap<String, Action> onLeave;
+    private HashMap<String, callback<Region,List<Beacon>>> onEnter;
+    private HashMap<String, callback<Region,List<Beacon>>> onLeave;
     public BeaconMangr(Context app){
         this.con = app;
         this.manager = new BeaconManager(con);
         manager.setMonitoringListener(new BeaconManager.MonitoringListener() {
             @Override
             public void onEnteredRegion(Region region, List<Beacon> list) {
-                Collection<Action> vals = onEnter.values();
-                Action[] values = new Action[vals.size()];
-                values = vals.toArray(values);
-                for (int x = 0; x < values.length; x++){
-                    values[x].run();
+                Iterator<String> kys = onEnter.keySet().iterator();
+                while (kys.hasNext()){
+                    
                 }
             }
 
