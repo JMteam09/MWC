@@ -1,15 +1,16 @@
 package com.estimote.notification.estimote;
 
-import android.app.Activity;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.estimote.notification.MainActivity;
 import com.estimote.notification.R;
+import com.estimote.notification.BeaconShowActivity;
 import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
@@ -41,15 +42,13 @@ public class BeaconNotificationsManager {
                 Log.d(TAG, "onEnteredRegion: " + region.getIdentifier());
                 String message = enterMessages.get(region.getIdentifier());
                 if (message != null) {
-                    showNotification(message);
+                    int beaconMinor = region.getMinor();
+                    showNotification(message, beaconMinor);
                     if (MainActivity.active = true) {
-                        if (region.getMinor() == 58703) {
-                            MainActivity.ME.setContentView(R.layout.first);
-                        } else if (region.getMinor() == 31953) {
-                            MainActivity.ME.setContentView(R.layout.second);
-                        } else if (region.getMinor() == 36037) {
-                            MainActivity.ME.setContentView(R.layout.third);
-                        }
+                        Intent intent = new Intent(context, BeaconShowActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.putExtra("minorValue", beaconMinor);
+                        context.startActivity(intent);
                     }
                 }
             }
@@ -59,10 +58,7 @@ public class BeaconNotificationsManager {
                 Log.d(TAG, "onExitedRegion: " + region.getIdentifier());
                 String message = exitMessages.get(region.getIdentifier());
                 if (message != null) {
-                    showNotification(message);
-                    if (MainActivity.active = true) {
-                        MainActivity.ME.setContentView(R.layout.activity_main);
-                    }
+                    int beaconMinor = region.getMinor();
                 }
             }
         });
@@ -86,8 +82,9 @@ public class BeaconNotificationsManager {
         });
     }
 
-    private void showNotification(String message) {
-        Intent resultIntent = new Intent(context, MainActivity.class);
+    private void showNotification(String message, int beaconMinor) {
+        Intent resultIntent = new Intent(context, BeaconShowActivity.class);
+        resultIntent.putExtra("minorValue", beaconMinor);
         PendingIntent resultPendingIntent = PendingIntent.getActivity(
                 context, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
