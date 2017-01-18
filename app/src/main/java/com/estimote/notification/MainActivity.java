@@ -7,9 +7,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 ;
 
+import com.estimote.sdk.Beacon;
+import com.estimote.sdk.Region;
 import com.estimote.sdk.SystemRequirementsChecker;
+import com.jordi.corepacket.Action;
 import com.jordi.corepacket.BeaconMangr;
 import com.jordi.corepacket.logging;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.jordi.corepacket.logging.LogType.*;
 
@@ -32,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e){
             Log.d("MWC", A3 + logging.stack_to_string(e.getStackTrace()));
         }
-        
     }
 
     @Override
