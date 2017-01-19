@@ -5,7 +5,7 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <ImageView
-        android:src="@drawable/xx"
+        android:src="@drawable/main"
         android:id="@+id/Dialog_Image"
         android:layout_width="400dp"
         android:layout_height="150dp"

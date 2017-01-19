@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:scaleType="fitXY"
-        android:src="@drawable/xx"
+        android:src="@drawable/main"
         />
 
     <TextView
@@ -35,12 +35,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="115dp" />
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/imageView_header"
-        android:layout_centerHorizontal="true">
-    </LinearLayout>
+    <Button
+        android:text="test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/test" />
 
 </RelativeLayout>
