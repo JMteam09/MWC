@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ME = this;
+        util.showdialog(this,"test","close");
     }
 
     @Override
