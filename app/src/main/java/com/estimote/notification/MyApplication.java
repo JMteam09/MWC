@@ -2,6 +2,7 @@ package com.estimote.notification;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 
 import com.estimote.notification.estimote.BeaconID;
 import com.estimote.notification.estimote.BeaconNotificationsManager;
@@ -9,12 +10,13 @@ import com.estimote.sdk.EstimoteSDK;
 
 public class MyApplication extends Application {
     private boolean beaconNotificationsEnabled = false;
-
+    public static Context background;
     @Override
     public void onCreate() {
         super.onCreate();
         EstimoteSDK.initialize(getApplicationContext(), "maaswaal-college-veenseweg-15t", "4302f89a2ec3d5c5ec15596a0e1079d0");
 //        EstimoteSDK.enableDebugLogging(true);
+        background = this.getApplicationContext();
     }
 
     public void enableBeaconNotifications() {

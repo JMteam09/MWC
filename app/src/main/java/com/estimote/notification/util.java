@@ -3,12 +3,14 @@ package com.estimote.notification;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,10 +23,11 @@ import org.w3c.dom.Text;
  */
 
 public class util {
-    public static void showdialog(Activity target, String text, String button){
+    public static Context background;
+    public static void showdialog(Context target, String text, String button){
         showdialog(target,text,button,-1);
     }
-    public static void showdialog(Activity target, String text, String button, int id){
+    public static void showdialog(Context target, String text, String button, int id){
         final Dialog d = new Dialog(target);
         d.setCancelable(false);
         try {
@@ -32,6 +35,7 @@ public class util {
             d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(100,255,255,255)));
         } catch (Exception e){}
         View v =  MainActivity.ME.getLayoutInflater().inflate(R.layout.dialog, null);
+        d.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
         d.setContentView(v);
         d.show();
         Button b = (Button) d.findViewById(R.id.Dialog_button);

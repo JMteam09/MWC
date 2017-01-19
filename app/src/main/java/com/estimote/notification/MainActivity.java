@@ -1,6 +1,7 @@
 package com.estimote.notification;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -26,18 +27,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ME = this;
-        ((Button) findViewById(R.id.test)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    util.showdialog(ME, "test", "close", R.drawable.xx);
-                }catch(Exception e){
-                    AlertDialog.Builder b = new AlertDialog.Builder(ME);
-                    b.setMessage(e.toString());
-                    b.show();
-                }
-            }
-        });
+        Intent i = new Intent(this,background.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        this.startService(i);
     }
 
     @Override
