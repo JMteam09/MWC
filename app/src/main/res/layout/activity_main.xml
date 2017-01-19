@@ -15,7 +15,8 @@
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:scaleType="fitXY"
-        android:src="@drawable/xx" />
+        android:src="@drawable/xx"
+        />
 
     <TextView
         android:text="Welkom! \nOp de open dag van het Maaswaal College \nlocatie Veensweg voor HAVO, Atheneum en Gymnasium."
@@ -24,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
-        android:background="@color/colorAccent"
+        android:background="@drawable/border_round"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:paddingTop="2dp"
