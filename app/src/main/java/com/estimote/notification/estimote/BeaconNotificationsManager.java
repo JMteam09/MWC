@@ -11,6 +11,7 @@ import android.util.Log;
 import com.estimote.notification.MainActivity;
 import com.estimote.notification.R;
 import com.estimote.notification.BeaconShowActivity;
+import com.estimote.notification.util;
 import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
@@ -43,13 +44,7 @@ public class BeaconNotificationsManager {
                 String message = enterMessages.get(region.getIdentifier());
                 if (message != null) {
                     int beaconMinor = region.getMinor();
-                    showNotification(message, beaconMinor);
-                    if (MainActivity.active = true) {
-                        Intent intent = new Intent(context, BeaconShowActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        intent.putExtra("minorValue", beaconMinor);
-                        context.startActivity(intent);
-                    }
+                    util.showdialog(util.background, "Heey de beacon is gedetecteerd en de dialog is goed gepopupt!","Oke!");
                 }
             }
 

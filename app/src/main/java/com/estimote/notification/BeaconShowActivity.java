@@ -25,11 +25,10 @@ public class BeaconShowActivity extends Activity {
             if (extras.containsKey("minorValue")) {
                 int beaconMinor = extras.getInt("minorValue");
                 if (beaconMinor == 58703) {
-                    setContentView(R.layout.first);
-                } else if (beaconMinor == 31953){
-                    setContentView(R.layout.second);
+                    util.showdialog(util.background, "Heey de beacon is gedetecteerd en de dialog is goed gepopupt!","Oke!");
+                } else if (beaconMinor == 31953){setContentView(R.layout.second);
                 } else if (beaconMinor == 36037){
-                    setContentView(R.layout.third);
+
                 }
             }
         }

@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -41,6 +42,9 @@ public class util {
         Button b = (Button) d.findViewById(R.id.Dialog_button);
         TextView message = (TextView) d.findViewById(R.id.Dialog_Text);
         ImageView img = (ImageView) d.findViewById(R.id.Dialog_Image);
+        if (id != -1){
+            img.setImageDrawable(ContextCompat.getDrawable(target,id));
+        }
         b.setText(button);
         message.setText(text);
         b.setOnClickListener(new View.OnClickListener() {
