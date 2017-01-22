@@ -10,13 +10,11 @@ import com.estimote.sdk.EstimoteSDK;
 
 public class MyApplication extends Application {
     private boolean beaconNotificationsEnabled = false;
-    public static Context background;
     @Override
     public void onCreate() {
         super.onCreate();
         EstimoteSDK.initialize(getApplicationContext(), "maaswaal-college-veenseweg-15t", "4302f89a2ec3d5c5ec15596a0e1079d0");
 //        EstimoteSDK.enableDebugLogging(true);
-        background = this.getApplicationContext();
     }
 
     public void enableBeaconNotifications() {

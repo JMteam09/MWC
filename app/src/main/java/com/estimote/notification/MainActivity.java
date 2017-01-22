@@ -20,22 +20,35 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 
     public static Activity ME;
-    public static boolean active = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ME = this;
-        Intent i = new Intent(this,background.class);
-        i.setFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        this.startService(i);
+
+        Button button = (Button) findViewById(R.id.test);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ME, ViewDialog.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
+
+        Button button1 = (Button) findViewById(R.id.button);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.test_layout);
+            }
+        });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        active = true;
 
         MyApplication app = (MyApplication) getApplication();
             if (!SystemRequirementsChecker.checkWithDefaultDialogs(this)) {
@@ -43,11 +56,5 @@ public class MainActivity extends AppCompatActivity {
                 app.enableBeaconNotifications();
             }
 
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        active = false;
     }
 }
