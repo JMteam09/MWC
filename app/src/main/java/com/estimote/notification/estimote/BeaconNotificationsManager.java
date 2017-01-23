@@ -4,14 +4,11 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.estimote.notification.MainActivity;
-import com.estimote.notification.R;
-import com.estimote.notification.BeaconShowActivity;
-import com.estimote.notification.util;
+import com.estimote.notification.ViewDialog;
 import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
@@ -42,9 +39,12 @@ public class BeaconNotificationsManager {
             public void onEnteredRegion(Region region, List<Beacon> list) {
                 Log.d(TAG, "onEnteredRegion: " + region.getIdentifier());
                 String message = enterMessages.get(region.getIdentifier());
+                int beaconMinor = region.getMinor();
+                Intent intent = new Intent(context, ViewDialog.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                MainActivity.ME.startActivity(intent);
                 if (message != null) {
-                    int beaconMinor = region.getMinor();
-                    util.showdialog(util.background, "Heey de beacon is gedetecteerd en de dialog is goed gepopupt!","Oke!");
+                    showNotification(message, beaconMinor);
                 }
             }
 
@@ -52,8 +52,9 @@ public class BeaconNotificationsManager {
             public void onExitedRegion(Region region) {
                 Log.d(TAG, "onExitedRegion: " + region.getIdentifier());
                 String message = exitMessages.get(region.getIdentifier());
+                int beaconMinor = region.getMinor();
                 if (message != null) {
-                    int beaconMinor = region.getMinor();
+                    showNotification(message, beaconMinor);
                 }
             }
         });
@@ -78,8 +79,7 @@ public class BeaconNotificationsManager {
     }
 
     private void showNotification(String message, int beaconMinor) {
-        Intent resultIntent = new Intent(context, BeaconShowActivity.class);
-        resultIntent.putExtra("minorValue", beaconMinor);
+        Intent resultIntent = new Intent(context, ViewDialog.class);
         PendingIntent resultPendingIntent = PendingIntent.getActivity(
                 context, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 

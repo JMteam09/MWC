@@ -43,4 +43,12 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/test" />
 
+    <Button
+        android:text="Second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/test"
+        android:layout_alignStart="@+id/test"
+        android:id="@+id/button" />
+
 </RelativeLayout>

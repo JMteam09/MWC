@@ -18,10 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".background" />
-        <activity android:name=".BeaconShowActivity">
-        </activity>
-
+        <activity android:name=".ViewDialog"
+                  android:theme="@android:style/Theme.Dialog"></activity>
     </application>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 </manifest>
