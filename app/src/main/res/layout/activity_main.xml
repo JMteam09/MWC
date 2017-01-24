@@ -14,41 +14,58 @@
         android:id="@+id/imageView_header"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/main"
-        />
+        android:scaleType="centerCrop"
+        android:src="@drawable/header" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#33000000" />
+
+    <ImageView
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        android:layout_marginTop="-15dp"
+        android:id="@+id/imageViewLogo" />
+
+    <View
+        android:id="@+id/welcome_message"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/imageView_header"
+        android:background="@color/colorPrimary"/>
 
     <TextView
-        android:text="Welkom! \nOp de open dag van het Maaswaal College \nlocatie Veensweg voor HAVO, Atheneum en Gymnasium."
-        android:textColor="#ffffff"
-        android:gravity="center"
+        android:text="Welkom op de open dag van het Maaswaal College locatie Veenseweg!"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:background="@drawable/border_round"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:paddingTop="2dp"
-        android:paddingBottom="2dp"
-        android:textSize="12sp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="115dp" />
+        android:layout_marginTop="15dp"
+        android:id="@+id/textView2"
+        android:textColor="@android:color/background_light"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:layout_below="@+id/imageView_header"
+        android:layout_alignParentStart="true" />
 
     <Button
-        android:text="test"
-        android:layout_width="wrap_content"
+        android:text="VAKKEN"
+        android:background="@android:color/background_light"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/test" />
+        android:layout_below="@+id/welcome_message"
+        android:id="@+id/button1"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp" />
 
     <Button
-        android:text="Second"
-        android:layout_width="wrap_content"
+        android:text="ROUTE"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/test"
-        android:layout_alignStart="@+id/test"
-        android:id="@+id/button" />
+        android:layout_below="@+id/button1"
+        android:id="@+id/button2"
+        android:textColor="@android:color/background_light"
+        android:textSize="25sp" />
 
 </RelativeLayout>

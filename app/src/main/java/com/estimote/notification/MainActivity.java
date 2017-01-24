@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ME = this;
 
-        Button button = (Button) findViewById(R.id.test);
+        /*Button button = (Button) findViewById(R.id.test);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,15 +35,10 @@ public class MainActivity extends AppCompatActivity {
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
-        });
+        });*/
 
-        Button button1 = (Button) findViewById(R.id.button);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.test_layout);
-            }
-        });
+
+
     }
 
     @Override
