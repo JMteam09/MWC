@@ -27,18 +27,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ME = this;
 
-        /*Button button = (Button) findViewById(R.id.test);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button buttonVakken = (Button) findViewById(R.id.buttonVakken);
+        buttonVakken.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ME, ViewDialog.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                Intent intent = new Intent(ME, VakkenActivity.class);
                 startActivity(intent);
             }
-        });*/
-
-
-
+        });
     }
 
     @Override
