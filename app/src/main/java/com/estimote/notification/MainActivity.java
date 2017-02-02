@@ -17,24 +17,19 @@ import com.estimote.sdk.SystemRequirementsChecker;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
-
     public static Activity ME;
-
+    public static WindowInitializer current;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         ME = this;
+        current = WindowInitializers.MainActivity();
+        current.Open();
+    }
 
-        Button buttonVakken = (Button) findViewById(R.id.buttonVakken);
-        buttonVakken.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ME, VakkenActivity.class);
-                startActivity(intent);
-            }
-        });
+    @Override
+    public void onBackPressed() {
+        current.Back();
     }
 
     @Override
