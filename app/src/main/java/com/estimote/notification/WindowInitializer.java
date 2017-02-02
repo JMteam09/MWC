@@ -9,9 +9,10 @@ import android.view.Window;
 public class WindowInitializer {
     private final Runnable onopen;
     private WindowInitializer provious;
-    public WindowInitializer(Runnable on_open)
+    public WindowInitializer(Runnable on_open)n
     {
         this.onopen = on_open;
+        this.provious = MainActivity.current;
     }
     public WindowInitializer Provious(){
         return this.provious;
@@ -29,7 +30,6 @@ public class WindowInitializer {
     }
     public WindowInitializer Open()
     {
-        this.provious = MainActivity.current;
         MainActivity.current = this;
         onopen.run();
         return this;
