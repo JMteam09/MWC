@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
+        current.Open();
         MyApplication app = (MyApplication) getApplication();
             if (!SystemRequirementsChecker.checkWithDefaultDialogs(this)) {
             } else if (!app.isBeaconNotificationsEnabled()) {

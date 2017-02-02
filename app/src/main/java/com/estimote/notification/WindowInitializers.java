@@ -17,11 +17,20 @@ public class WindowInitializers {
                 buttonVakken.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        MainActivity.ME.setContentView(R.layout.activity_vakken);
+                        WindowInitializer in = WindowInitializers.VakkenActivity(MainActivity.current).Open();
                     }
                 });
             }
-        }, null);
+        });
+        return window;
+    }
+    public static WindowInitializer VakkenActivity(WindowInitializer prev){
+        WindowInitializer window = new WindowInitializer(new Runnable() {
+            @Override
+            public void run() {
+                MainActivity.ME.setContentView(R.layout.activity_vakken);
+            }
+        });
         return window;
     }
 }
