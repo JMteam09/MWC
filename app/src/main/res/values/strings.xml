@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Maaswaal College</string>
+    <string name="concontentDescriptionImage">Image</string>
+
+    <!--Vakkenlijst-->
+    <string name="nederlands">Nederlands</string>
+    <string name="wiskunde">Wiskunde</string>
+    <string name="engels">Engels</string>
+    <string name="Natuurkunde">Natuurkunde</string>
+    <string name="Scheikunde">Scheikunde</string>
+    <string name="Aarderijkskunde">Aarderijkskunde</string>
+    <string name="Geschiedenis">Geschiedenis</string>
+    <string name="CKV">CKV</string>
+    <string name="Informatica">Informatica</string>
 </resources>

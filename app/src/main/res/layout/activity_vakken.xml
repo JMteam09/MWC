@@ -10,8 +10,70 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.estimote.notification.MainActivity" >
 
+    <!--header image-->
+    <ImageView
+        android:id="@+id/imageView_header"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/m_1077"
+        android:contentDescription="@string/concontentDescriptionImage" />
+
+    <!--header black overlay-->
     <View
+        android:id="@+id/colorOverlay_header"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#33000000" />
+
+    <!--header logo-->
+    <ImageView
+        android:id="@+id/imageview_logo"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        android:layout_marginTop="-15dp"
+        android:contentDescription="@string/concontentDescriptionImage" />
+
+    <!--button to Nederlands-->
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff" />
+        android:layout_below="@+id/imageView_header"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/buttonView_nederlands"
+                android:text="@string/nederlands"
+                android:background="@android:color/background_light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/buttonView_wiskunde"
+                android:text="@string/wiskunde"
+                android:background="@android:color/background_light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/buttonView_engels"
+                android:text="@string/engels"
+                android:background="@android:color/background_light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="25sp" />
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>

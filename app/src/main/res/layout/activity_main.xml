@@ -10,32 +10,40 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.estimote.notification.MainActivity">
 
+    <!--header image-->
     <ImageView
         android:id="@+id/imageView_header"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/header" />
+        android:src="@drawable/header"
+        android:contentDescription="@string/concontentDescriptionImage" />
 
+    <!--header black overlay-->
     <View
+        android:id="@+id/colorOverlay_header"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="#33000000" />
 
+    <!--header logo-->
     <ImageView
+        android:id="@+id/imageview_logo"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:src="@drawable/logo"
         android:layout_marginTop="-15dp"
-        android:id="@+id/imageViewLogo" />
+        android:contentDescription="@string/concontentDescriptionImage" />
 
+    <!--welcome message background-->
     <View
-        android:id="@+id/welcome_message"
+        android:id="@+id/colorOverlay_welcome"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_below="@+id/imageView_header"
         android:background="@color/colorPrimary"/>
 
+    <!--welcome message-->
     <TextView
         android:text="Welkom op de open dag van het Maaswaal College locatie Veenseweg!"
         android:layout_width="wrap_content"
@@ -48,43 +56,47 @@
         android:layout_below="@+id/imageView_header"
         android:layout_alignParentStart="true" />
 
+    <!--button to vakken-->
     <Button
+        android:id="@+id/buttonView_vakken"
         android:text="VAKKEN"
         android:background="@android:color/background_light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/welcome_message"
-        android:id="@+id/buttonVakken"
+        android:layout_below="@+id/colorOverlay_welcome"
         android:textColor="@color/colorPrimary"
         android:textSize="25sp" />
 
+    <!--button to route-->
     <Button
+        android:id="@+id/buttonView_route"
         android:text="ROUTE"
         android:background="@android:color/background_light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonVakken"
-        android:id="@+id/button2"
+        android:layout_below="@+id/buttonView_vakken"
         android:textColor="@color/colorPrimary"
         android:textSize="25sp" />
 
+    <!--button to programma-->
     <Button
-        android:text="PROGrAMMA"
+        android:id="@+id/buttonView_programma"
+        android:text="PROGRAMMA"
         android:background="@android:color/background_light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
-        android:id="@+id/button3"
+        android:layout_below="@+id/buttonView_route"
         android:textColor="@color/colorPrimary"
         android:textSize="25sp" />
 
+    <!--button to mentoren-->
     <Button
+        android:id="@+id/buttonView_mentoren"
         android:text="MENTOREN"
         android:background="@android:color/background_light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button3"
-        android:id="@+id/button4"
+        android:layout_below="@+id/buttonView_programma"
         android:textColor="@color/colorPrimary"
         android:textSize="25sp" />
 
