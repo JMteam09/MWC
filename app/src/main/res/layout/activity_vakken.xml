@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/m_1077"
+        android:src="@drawable/image1"
         android:contentDescription="@string/concontentDescriptionImage" />
 
     <!--header black overlay-->

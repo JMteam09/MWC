@@ -43,8 +43,8 @@ public class BeaconNotificationsManager {
                 Intent intent = new Intent(context, ViewDialog.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("minorId", beaconMinor);
-                //context.startActivity(intent);
-                MainActivity.ME.startActivity(intent);
+                context.startActivity(intent);
+                //MainActivity.ME.startActivity(intent);
                 if (message != null) {
                     showNotification(message, beaconMinor);
                 }
