@@ -39,7 +39,7 @@ public class BeaconNotificationsManager {
             public void onEnteredRegion(Region region, List<Beacon> list) {
                 Log.d(TAG, "onEnteredRegion: " + region.getIdentifier());
                 String message = enterMessages.get(region.getIdentifier());
-                String beaconMinor = region.getMinor().toString();
+                int beaconMinor = region.getMinor();
                 Intent intent = new Intent(context, ViewDialog.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("minorId", beaconMinor);
@@ -54,7 +54,7 @@ public class BeaconNotificationsManager {
             public void onExitedRegion(Region region) {
                 Log.d(TAG, "onExitedRegion: " + region.getIdentifier());
                 String message = exitMessages.get(region.getIdentifier());
-                String beaconMinor = region.getMinor().toString();
+                int beaconMinor = region.getMinor();
                 if (message != null) {
                     showNotification(message, beaconMinor);
                 }
@@ -80,7 +80,7 @@ public class BeaconNotificationsManager {
         });
     }
 
-    private void showNotification(String message, String beaconMinor) {
+    private void showNotification(String message, int beaconMinor) {
         Intent resultIntent = new Intent(context, ViewDialog.class);
         PendingIntent resultPendingIntent = PendingIntent.getActivity(
                 context, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);

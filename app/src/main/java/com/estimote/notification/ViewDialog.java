@@ -18,9 +18,12 @@ public class ViewDialog extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        String id = intent.getStringExtra("minorId");
+        int minorId = intent.getIntExtra("beaconMinor", 0);
         showDialog();
     }
+
+    /* int layoutId = getResources().getIdentifier(String layoutname, "layout", getPackageName());
+    dialog.setContentView(layoutId); */
 
     private void showDialog() {
         final Dialog dialog = new Dialog(this);
