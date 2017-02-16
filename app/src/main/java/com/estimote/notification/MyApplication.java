@@ -22,21 +22,37 @@ public class MyApplication extends Application {
 
         BeaconNotificationsManager beaconNotificationsManager = new BeaconNotificationsManager(this);
 
-        //first iBeacon (Red)
+        //first iBeacon (Red) (Ingang)
         beaconNotificationsManager.addNotification(
                 new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 24934, 58703),
-                "Hello, first iBeacon.",
-                "Goodbye, first iBeacon.");
-        //Second iBeacon (Yellow)
+                "Je bent nu bij de ingang!",
+                "x");
+        //Second iBeacon (Yellow) (WON)
         beaconNotificationsManager.addNotification(
                 new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 45237, 31953),
-                "Hello, Second iBeacon.",
-                "Goodbye, Second iBeacon.");
-        //Third iBeacon (Roze)
+                "Je bent nu bij WON!",
+                "x");
+        //Third iBeacon (Roze) (Absentiecoördinator)
         beaconNotificationsManager.addNotification(
                 new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 8740, 36037),
-                "Hello, Third iBeacon.",
-                "Goodbye, Third iBeacon.");
+                "Je bent nu bij de Absentiecoördinator!",
+                "x");
+        //4 iBeacon (Red) (LO)
+        beaconNotificationsManager.addNotification(
+                new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 23639, 12181),
+                "Je bent nu bij LO!",
+                "x");
+        //5 iBeacon (Yellow) (BIO)
+        beaconNotificationsManager.addNotification(
+                new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 43920, 42906),
+                "Je bent nu bij BIO!",
+                "x");
+        //6 iBeacon (Roze) (NONE)
+        beaconNotificationsManager.addNotification(
+                new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 25436, 2306),
+                "NONE",
+                "x");
+
 
         beaconNotificationsManager.startMonitoring();
         beaconNotificationsEnabled = true;
