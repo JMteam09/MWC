@@ -9,11 +9,11 @@ public class WindowInitializers {
             @Override
             public void run() {
                 MainActivity.ME.setContentView(R.layout.activity_main);
-                Button buttonView_vakken = (Button) MainActivity.ME.findViewById(R.id.buttonView_vakken);
-                buttonView_vakken.setOnClickListener(new View.OnClickListener() {
+                Button buttonView_route = (Button) MainActivity.ME.findViewById(R.id.buttonView_route);
+                buttonView_route.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        WindowInitializer in = WindowInitializers.VakkenActivity(MainActivity.current).Open();
+                        WindowInitializer in = WindowInitializers.RouteActivity(MainActivity.current).Open();
                     }
                 });
             }
@@ -21,19 +21,11 @@ public class WindowInitializers {
         return window;
     }
 
-    public static WindowInitializer VakkenActivity(WindowInitializer prev){
+    public static WindowInitializer RouteActivity(WindowInitializer prev){
         WindowInitializer window = new WindowInitializer(new Runnable() {
             @Override
             public void run() {
-                MainActivity.ME.setContentView(R.layout.activity_vakken);
-                Button  buttonView_nederlands = (Button) MainActivity.ME.findViewById(R.id.buttonView_nederlands);
-                buttonView_nederlands.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // Tijdelijk opent die MainActivity om vanmiddag ff te testen of ik t door heb.
-                        WindowInitializer in = WindowInitializers.MainActivity().Open();
-                    }
-                });
+                MainActivity.ME.setContentView(R.layout.activity_route);
             }
         });
         return window;
