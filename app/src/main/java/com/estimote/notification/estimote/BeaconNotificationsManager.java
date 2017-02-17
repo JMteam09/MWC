@@ -92,12 +92,13 @@ public class BeaconNotificationsManager {
 
     private void showNotification(String message, int beaconMinor) {
         Intent resultIntent = new Intent(context, ViewDialog.class);
+        resultIntent.putExtra("minorId", beaconMinor);
         PendingIntent resultPendingIntent = PendingIntent.getActivity(
                 context, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
                 .setSmallIcon(android.R.drawable.ic_dialog_info)
-                .setContentTitle("Beacon Notifications")
+                .setContentTitle("MWC Notifications")
                 .setContentText(message)
                 .setDefaults(NotificationCompat.DEFAULT_ALL)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
