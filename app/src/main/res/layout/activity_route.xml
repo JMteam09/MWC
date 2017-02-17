@@ -35,4 +35,22 @@
         android:layout_marginTop="-40dp"
         android:contentDescription="@string/concontentDescriptionImage" />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:id="@+id/header_img"
+        android:layout_below="@id/imageView_header"
+        android:gravity="center"
+        android:src="@drawable/r1"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:id="@+id/header_img2"
+        android:layout_below="@id/header_img"
+        android:gravity="center"
+        android:src="@drawable/r2"
+        android:scaleType="centerCrop" />
+
 </RelativeLayout>

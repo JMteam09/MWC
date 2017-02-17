@@ -10,8 +10,8 @@
         android:layout_height="150dp"
         android:id="@+id/header_img"
         android:gravity="center"
-        android:src="@drawable/image2"
-        android:scaleType="center" />
+        android:src="@drawable/lo2"
+        android:scaleType="centerCrop" />
 
     <TextView
         android:layout_width="wrap_content"

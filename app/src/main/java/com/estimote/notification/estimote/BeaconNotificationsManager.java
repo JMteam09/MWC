@@ -42,22 +42,10 @@ public class BeaconNotificationsManager {
                 Log.d(TAG, "onEnteredRegion: " + region.getIdentifier());
                 String message = enterMessages.get(region.getIdentifier());
                 int beaconMinor = region.getMinor();
-
-                ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-                List<ActivityManager.RunningTaskInfo> services = activityManager.getRunningTasks(Integer.MAX_VALUE);
-                boolean isActivityFound = false;
-
-                if (services.get(0).topActivity.getPackageName().toString().equalsIgnoreCase(context.getPackageName().toString())) {
-                    isActivityFound = true;
-                }
-
-                if (!isActivityFound) {
-                    Intent intent = new Intent(context, ViewDialog.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intent.putExtra("minorId", beaconMinor);
-                    context.startActivity(intent);
-                }
-
+                Intent intent = new Intent(context, ViewDialog.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("minorId", beaconMinor);
+                context.startActivity(intent);
                 if (message != null) {
                     showNotification(message, beaconMinor);
                 }
