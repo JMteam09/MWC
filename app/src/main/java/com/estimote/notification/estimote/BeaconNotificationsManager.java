@@ -1,5 +1,6 @@
 package com.estimote.notification.estimote;
 
+import android.app.ActivityManager;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -16,6 +17,7 @@ import com.estimote.sdk.Region;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class BeaconNotificationsManager {
 
@@ -40,11 +42,22 @@ public class BeaconNotificationsManager {
                 Log.d(TAG, "onEnteredRegion: " + region.getIdentifier());
                 String message = enterMessages.get(region.getIdentifier());
                 int beaconMinor = region.getMinor();
-                Intent intent = new Intent(context, ViewDialog.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra("minorId", beaconMinor);
-                context.startActivity(intent);
-                //MainActivity.ME.startActivity(intent);
+
+                ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+                List<ActivityManager.RunningTaskInfo> services = activityManager.getRunningTasks(Integer.MAX_VALUE);
+                boolean isActivityFound = false;
+
+                if (services.get(0).topActivity.getPackageName().toString().equalsIgnoreCase(context.getPackageName().toString())) {
+                    isActivityFound = true;
+                }
+
+                if (!isActivityFound) {
+                    Intent intent = new Intent(context, ViewDialog.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("minorId", beaconMinor);
+                    context.startActivity(intent);
+                }
+
                 if (message != null) {
                     showNotification(message, beaconMinor);
                 }
@@ -55,9 +68,6 @@ public class BeaconNotificationsManager {
                 Log.d(TAG, "onExitedRegion: " + region.getIdentifier());
                 String message = exitMessages.get(region.getIdentifier());
                 int beaconMinor = region.getMinor();
-                if (message != null) {
-                    showNotification(message, beaconMinor);
-                }
             }
         });
     }
