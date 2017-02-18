@@ -1,4 +1,4 @@
-package com.estimote.notification.estimote;
+package com.mwc.opendag.estimote;
 
 import android.app.ActivityManager;
 import android.app.NotificationManager;
@@ -60,7 +60,7 @@ public class BeaconNotificationsManager {
         });
     }
 
-    public void addNotification(BeaconID beaconID, String enterMessage, String exitMessage) {
+    public void addNotification(com.mwc.opendag.estimote.BeaconID beaconID, String enterMessage, String exitMessage) {
         Region region = beaconID.toBeaconRegion();
         enterMessages.put(region.getIdentifier(), enterMessage);
         exitMessages.put(region.getIdentifier(), exitMessage);

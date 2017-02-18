@@ -1,5 +1,4 @@
-package com.estimote.notification.estimote;
-
+package com.mwc.opendag.estimote;
 import com.estimote.sdk.Region;
 
 import java.util.UUID;
