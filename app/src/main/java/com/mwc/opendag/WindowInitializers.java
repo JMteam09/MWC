@@ -1,7 +1,9 @@
-package com.estimote.notification;
+package com.mwc.opendag;
 
 import android.view.View;
 import android.widget.Button;
+
+import com.estimote.notification.R;
 
 public class WindowInitializers {
     public static WindowInitializer MainActivity(){

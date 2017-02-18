@@ -1,4 +1,4 @@
-package com.estimote.notification;
+package com.mwc.opendag;
 
 import android.view.Window;
 

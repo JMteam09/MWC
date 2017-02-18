@@ -1,4 +1,4 @@
-package com.estimote.notification;
+package com.mwc.opendag;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.net.Uri;
+
+import com.estimote.notification.R;
 
 public class ViewDialog extends Activity{
 

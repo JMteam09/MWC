@@ -1,4 +1,4 @@
-package com.estimote.notification;
+package com.mwc.opendag;
 
 import android.app.Activity;
 import android.content.ComponentName;
@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.mwc.opendag.WindowInitializer;
+import com.mwc.opendag.WindowInitializers;
 import com.estimote.sdk.SystemRequirementsChecker;
 
 public class MainActivity extends AppCompatActivity {

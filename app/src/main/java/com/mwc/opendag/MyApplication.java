@@ -1,11 +1,11 @@
-package com.estimote.notification;
+package com.mwc.opendag;
 
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
-import com.estimote.notification.estimote.BeaconID;
-import com.estimote.notification.estimote.BeaconNotificationsManager;
+import com.mwc.opendag.estimote.BeaconID;
+import com.mwc.opendag.estimote.BeaconNotificationsManager;
 import com.estimote.sdk.EstimoteSDK;
 
 public class MyApplication extends Application {

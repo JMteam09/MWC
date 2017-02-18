@@ -8,8 +8,8 @@ import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
-import com.estimote.notification.MainActivity;
-import com.estimote.notification.ViewDialog;
+import com.mwc.opendag.MainActivity;
+import com.mwc.opendag.ViewDialog;
 import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
